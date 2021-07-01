@@ -1,0 +1,20 @@
+* Docker nyxt
+- [X] installation from binary
+- [-] run via gui on host machine
+  - [X] xquartz on mac
+  - [X] install socat
+  - [ ] following [[https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/][this blog]]
+  - [ ] figure out commands
+  - [ ] take pics
+
+#+begin_src 
+open -a XQuartz
+#set preference to allow connectino from network clients
+#+end_src
+
+#+begin_src bash
+ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}') xhost + $ip
+display_number=`ps -ef | grep "Xquartz :\d" | grep -v xinit | awk '{ print $9; }'`
+#+end_src
+
+
