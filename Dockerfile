@@ -1,10 +1,7 @@
 FROM ubuntu:latest
 WORKDIR /opt/nyxt
-RUN apt-get update && apt-get install -y \
-    wget \
-    zip 
-RUN wget https://github.com/atlas-engineer/nyxt/releases/download/2.0.0/nyxt-ubuntu.zip
-RUN unzip nyxt-ubuntu.zip
+RUN apt-get update && apt-get install -y wget
+RUN wget https://github.com/atlas-engineer/nyxt/releases/download/2.1.1/nyxt_2.1.1_amd64.deb
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     libfixposix-dev \
     libwebkit2gtk-4.0-dev \
@@ -21,5 +18,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     libgirepository-1.0-1 \
     libfixposix3
 
-RUN dpkg -i ./nyxt_2.0.0_amd64.deb
+RUN apt-get install -y xauth
+
+RUN dpkg -i ./nyxt_2.1.1_amd64.deb
 #CMD nyxt
+
+COPY entrypoint.sh /
+
+ENTRYPOINT bash /entrypoint.sh
