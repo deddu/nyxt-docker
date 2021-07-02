@@ -1,27 +1,21 @@
 * Docker nyxt
-- [X] installation from binary
+- [X] containerize
+  - [X] installation from binary
+  - [X] install deps
 - [-] run via gui on host machine
   - [X] xquartz on mac
-  - [X] install socat
-  - [ ] following [[https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/][this blog]]
-  - [ ] figure out commands
-  - [ ] take pics
 
-#+begin_src
-open -a XQuartz
-#set preference to allow connectino from network clients
-#+end_src
-
-#+begin_src bash
-ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}') xhost + $ip
-display_number=`ps -ef | grep "Xquartz :\d" | grep -v xinit | awk '{ print $9; }'`
-#+end_src
 
 ** Docker on macos
-1. Install XQuartz
+1. Install XQuartz =brew install xquartz=
 2. Enable "Allow connections from network clients" under prefernces in XQuartz
+   #+begin_src bash
+   open -a XQuartz
+   #set preference to allow connectino from network clients, via the xquartz preference panel
+   #+end_src
 3. Restart XQuartz
-4. Build Docker Image (`docker build -t nyxt:2.1.1 .`)
+4. Build Docker Image (=docker build -t nyxt:2.1.1 .=)
 5. Launch a new terminal and ensure you have "DISPLAY=:0" set
-6. Run "xhost + 127.0.0.1" from a terminal that terminal
-7. Run "docker run nyxt:2.1.1"
+6. Run =xhost + 127.0.0.1= from a xquartz terminal 
+7. In that terminal run =docker run nyxt:2.1.1=
+
