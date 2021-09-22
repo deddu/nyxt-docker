@@ -14,8 +14,8 @@
    #set preference to allow connectino from network clients, via the xquartz preference panel
    #+end_src
 3. Restart XQuartz
-4. Build Docker Image (=docker build -t nyxt:2.1.1 .=)
+4. Build Docker Image (=docker build -t nyxt:2.2.0 .=)
 5. Launch a new terminal and ensure you have "DISPLAY=:0" set
 6. Run =xhost + 127.0.0.1= from a xquartz terminal 
-7. In that terminal run =docker run nyxt:2.1.1=
+7. In that terminal run =docker run nyxt:2.2.0=
 
