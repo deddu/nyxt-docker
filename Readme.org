@@ -21,13 +21,23 @@ see special note for macOs below.
 3. Restart XQuartz
 4. Launch a new terminal and ensure you have "DISPLAY=:0" set
 5. Run =xhost + 127.0.0.1= from a xquartz terminal 
-6. In that terminal run =docker run -it --rm bigdeddu/nyxt:2.2.0=
+#+begin_src bash
+xhost +127.0.0.1
+#+end_src
+6. In that terminal run 
+#+begin_src 
+docker run -it --rm bigdeddu/nyxt:2.2.0
+#+end_src
 
 
-** 
-Todo:
-- [X] containerize
+** TODO general
+- [-] containerize
   - [X] installation from binary
   - [X] install deps
-- [-] run via gui on host machine
+  - [ ] cleanup container layers
+
+** TODO macos
+- [-] run via gui on host machine (xquartz?)
   - [X] xquartz on mac
+  - [ ] document volume mounts
+  - [ ] create automator or some ohter link
