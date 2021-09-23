@@ -16,7 +16,7 @@ see special note for macOs below.
 2. Enable "Allow connections from network clients" under prefernces in XQuartz
    #+begin_src bash
    open -a XQuartz
-   #set preference to allow connectino from network clients, via the xquartz preference panel
+   #Go to preferences -> security and click `allow connections from network clients`
    #+end_src
 3. Restart XQuartz
 4. Launch a new terminal and ensure you have "DISPLAY=:0" set
