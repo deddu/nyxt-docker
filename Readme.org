@@ -1,12 +1,17 @@
 * Docker nyxt
-- [X] containerize
-  - [X] installation from binary
-  - [X] install deps
-- [-] run via gui on host machine
-  - [X] xquartz on mac
+A dockerized version of [[nyxt.atlas.engineer/][Nyxt]] 
+
+** usage
+
+#+begin_src bash
+docker run -it --rm bigdeddu/nyxt:2.2.0
+#+end_src
 
 
-** Docker on macos
+see special note for macOs below.
+
+
+** usage for Docker on macos
 1. Install XQuartz =brew install xquartz=
 2. Enable "Allow connections from network clients" under prefernces in XQuartz
    #+begin_src bash
@@ -14,8 +19,15 @@
    #set preference to allow connectino from network clients, via the xquartz preference panel
    #+end_src
 3. Restart XQuartz
-4. Build Docker Image (=docker build -t nyxt:2.2.0 .=)
-5. Launch a new terminal and ensure you have "DISPLAY=:0" set
-6. Run =xhost + 127.0.0.1= from a xquartz terminal 
-7. In that terminal run =docker run nyxt:2.2.0=
+4. Launch a new terminal and ensure you have "DISPLAY=:0" set
+5. Run =xhost + 127.0.0.1= from a xquartz terminal 
+6. In that terminal run =docker run -it --rm bigdeddu/nyxt:2.2.0=
 
+
+** 
+Todo:
+- [X] containerize
+  - [X] installation from binary
+  - [X] install deps
+- [-] run via gui on host machine
+  - [X] xquartz on mac
