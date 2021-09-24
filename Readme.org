@@ -8,23 +8,23 @@ docker run -it --rm bigdeddu/nyxt:2.2.0
 #+end_src
 
 
-see special note for macOs below.
+see special note for macOS below.
 
 
 ** usage for Docker on macos
 1. Install XQuartz =brew install xquartz=
-2. Enable "Allow connections from network clients" under prefernces in XQuartz
+2. Launch XQuartz
    #+begin_src bash
    open -a XQuartz
-   #Go to preferences -> security and click `allow connections from network clients`
    #+end_src
-3. Restart XQuartz
-4. Launch a new terminal and ensure you have "DISPLAY=:0" set
-5. Run =xhost + 127.0.0.1= from a xquartz terminal 
+3. Enable "Allow connections from network clients" under preferences in XQuartz. (Go to the xquartz preferences panel  =preferences -> security= and click `allow connections from network clients`)
+4. Restart XQuartz
+5. Launch a new =xterm= terminal and ensure you have "DISPLAY=:0" set.
+6. Run =xhost + 127.0.0.1= from a xquartz terminal 
 #+begin_src bash
 xhost +127.0.0.1
 #+end_src
-6. In that terminal run 
+7. In that terminal run 
 #+begin_src 
 docker run -it --rm bigdeddu/nyxt:2.2.0
 #+end_src
@@ -40,4 +40,4 @@ docker run -it --rm bigdeddu/nyxt:2.2.0
 - [-] run via gui on host machine (xquartz?)
   - [X] xquartz on mac
   - [ ] document volume mounts
-  - [ ] create automator or some ohter link
+  - [ ] create automator or some other link
