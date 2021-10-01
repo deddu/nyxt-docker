@@ -1,5 +1,5 @@
 * Docker nyxt
-A dockerized version of [[nyxt.atlas.engineer/][Nyxt]] 
+A dockerized version of [[https://nyxt.atlas.engineer/][Nyxt]] 
 
 ** usage
 
