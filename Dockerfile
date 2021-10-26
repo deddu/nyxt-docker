@@ -17,6 +17,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     libglib2.0-0 \
     libgirepository-1.0-1 \
     libfixposix3 \ 
+    libgstreamer1.0-0 \
+    gir1.2-gst-plugins-base-1.0 \
+    gir1.2-gst-plugins-bad-1.0 \
     xauth
 
 RUN wget https://github.com/atlas-engineer/nyxt/releases/download/${NYXTVERSION}/nyxt_${NYXTVERSION}_amd64.deb
