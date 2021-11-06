@@ -41,3 +41,32 @@ docker run -it --rm bigdeddu/nyxt:2.2.1
   - [X] xquartz on mac
   - [ ] document volume mounts
   - [ ] create automator or some other link
+  - [ ] fix sound
+  - [ ] fix youtube
+
+
+** dev/debugging/building
+
+to debug audio/video play I run with 
+#+begin_src
+docker run -it --rm --name nyxt \
+ -v /tmp/.X11-unix:/tmp/.X11-unix 
+ -e DISPLAY=unix$DISPLAY \
+ -e WEBKIT_DISABLE_COMPOSITING_MODE=1 \
+ -e GDK_SYNCHRONIZE=1 \
+ -e LIBGL_DEBUG=verbose \
+ -e LIBGL_ALWAYS_INDIRECT=1 \
+ -e NO_AT_BRIDGE=1 \
+ --privileged \
+ --device /dev/snd nyxt:2.2.2
+#+end_src
+
+and build w/
+#+begin_src
+docker build . -t nyxt:2.2.2
+#+end_src
+
+this way I can exec in the container via docker exec
+#+begin_src bash
+docker exec -it nyxt bash 
+#+end_src
