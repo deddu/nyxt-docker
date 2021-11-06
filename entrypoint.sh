@@ -1,4 +1,5 @@
 
 
 export DISPLAY=host.docker.internal:0
+#WEBKIT_DISABLE_COMPOSITING_MODE=1 -e GDK_SYNCHRONIZE=1 -e LIBGL_DEBUG=verbose -e LIBGL_ALWAYS_INDIRECT=1
 nyxt
