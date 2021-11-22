@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV NYXTVERSION=2.2.2
+ENV NYXTVERSION=2.2.3
 WORKDIR /opt/nyxt
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     wget \
@@ -32,6 +32,13 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     # libgstreamer-plugins-good1.0-0 \
     # libgstreamer-plugins-bad1.0-0 \
     # libgstreamer-gl1.0-0 \
+    alsa-utils \
+    libasound2 \ 
+    libasound2-data \
+    libasound2-plugins \
+    libasound2-plugins-extra \
+    pulseaudio \
+    pulseaudio-utils \
     xauth
 
 RUN wget https://github.com/atlas-engineer/nyxt/releases/download/${NYXTVERSION}/nyxt_${NYXTVERSION}_amd64.deb
