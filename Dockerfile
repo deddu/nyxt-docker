@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV NYXTVERSION=2.2.2
+ENV NYXTVERSION=2.2.3
 WORKDIR /opt/nyxt
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
     wget \
