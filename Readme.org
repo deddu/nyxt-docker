@@ -4,7 +4,7 @@ A dockerized version of [[https://nyxt.atlas.engineer/][Nyxt]]
 ** usage
 
 #+begin_src bash
-docker run -it --rm bigdeddu/nyxt:2.2.2
+docker run -it --rm bigdeddu/nyxt:2.2.4
 #+end_src
 
 
@@ -26,7 +26,7 @@ xhost +127.0.0.1
 #+end_src
 7. In that terminal run 
 #+begin_src 
-docker run -it --rm bigdeddu/nyxt:2.2.2
+docker run -it --rm bigdeddu/nyxt:2.2.4
 #+end_src
 
 
@@ -59,12 +59,12 @@ docker run -it --rm --name nyxt \
  -e LIBGL_ALWAYS_INDIRECT=1 \
  -e NO_AT_BRIDGE=1 \
  --privileged \
- --device /dev/snd nyxt:2.2.2
+ --device /dev/snd nyxt:2.2.4
 #+end_src
 
 and build w/
 #+begin_src
-docker build . -t nyxt:2.2.2
+docker build . -t nyxt:2.2.4
 #+end_src
 
 this way I can exec in the container via docker exec
