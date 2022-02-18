@@ -51,7 +51,7 @@ to debug audio/video play I run with
 #+begin_src
 xterm -e 'xhost +127.0.0.1';
 docker run -it --rm --name nyxt \
- -v /tmp/.X11-unix:/tmp/.X11-unix 
+ -v /tmp/.X11-unix:/tmp/.X11-unix \
  -e DISPLAY=unix$DISPLAY \
  -e WEBKIT_DISABLE_COMPOSITING_MODE=1 \
  -e GDK_SYNCHRONIZE=1 \
