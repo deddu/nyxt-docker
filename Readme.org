@@ -1,22 +1,23 @@
 * Docker nyxt
 A dockerized version of [[https://nyxt.atlas.engineer/][Nyxt]] 
 
-** usage
+** Usage
 
 #+begin_src bash
 docker run -it --rm bigdeddu/nyxt:2.2.4
 #+end_src
 
+See special note for macOS below.
 
-see special note for macOS below.
+Alternatively, you can also use [[https://github.com/mviereck/x11docker][x11docker]] tool, which has lots of features and options.
 
 
-** usage for Docker on macos
+** Usage for Docker on macOS
 1. Install XQuartz =brew install xquartz=
 2. Launch XQuartz
-   #+begin_src bash
-   open -a XQuartz
-   #+end_src
+#+begin_src bash
+open -a XQuartz
+#+end_src
 3. Enable "Allow connections from network clients" under preferences in XQuartz. (Go to the xquartz preferences panel  =preferences -> security= and click `allow connections from network clients`)
 4. Restart XQuartz
 5. Launch a new =xterm= terminal and ensure you have "DISPLAY=:0" set.
@@ -36,7 +37,7 @@ docker run -it --rm bigdeddu/nyxt:2.2.4
   - [X] install deps
   - [ ] cleanup container layers
 
-** TODO macos
+** TODO macOS
 - [-] run via gui on host machine (xquartz?)
   - [X] xquartz on mac
   - [ ] document volume mounts
@@ -47,7 +48,7 @@ docker run -it --rm bigdeddu/nyxt:2.2.4
 
 ** dev/debugging/building
 
-to debug audio/video play I run with 
+To debug audio/video play I run with:
 #+begin_src
 xterm -e 'xhost +127.0.0.1';
 docker run -it --rm --name nyxt \
@@ -62,12 +63,12 @@ docker run -it --rm --name nyxt \
  --device /dev/snd nyxt:2.2.4
 #+end_src
 
-and build w/
+And build with:
 #+begin_src
 docker build . -t nyxt:2.2.4
 #+end_src
 
-this way I can exec in the container via docker exec
+This way I can exec in the container via =docker exec=:
 #+begin_src bash
 docker exec -it nyxt bash 
 #+end_src
