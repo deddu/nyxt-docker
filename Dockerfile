@@ -1,7 +1,12 @@
 FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
 ENV NYXTVERSION=2.2.4
+
 WORKDIR /opt/nyxt
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
+
+RUN apt-get update && \
+    apt-get install -yq \
     wget \
     libfixposix-dev \
     libwebkit2gtk-4.0-dev \
